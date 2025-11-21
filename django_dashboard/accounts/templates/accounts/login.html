@@ -15,7 +15,16 @@
 
         <form method="post">
             {% csrf_token %}
-            {{ form.as_p }}
+
+            <div class="mb-3">
+                <label class="form-label">Usuário: </label>
+                {{ form.username }}
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Senha: </label>
+                {{ form.password }}
+            </div>
 
             <button type="submit" class="btn btn-primary w-100">Entrar</button>
         </form>

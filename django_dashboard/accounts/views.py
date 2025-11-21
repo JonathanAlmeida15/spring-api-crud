@@ -9,7 +9,6 @@ def login_view(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            # respeita o next se existir, senão vai para a lista de clientes
             next_url = request.POST.get('next') or request.GET.get('next') or 'dashboard:client_list'
             return redirect(next_url)
         else:
